@@ -1,8 +1,7 @@
-
 #!/bin/sh
 cd /usr/local/glassfish3
 if [ ! -f /usr/local/glassfish3/bin/asadmin ]; then
-  cp -f /binarios/glassfish3 /usr/local/
+  cp -f /binarios/glassfish3 /usr/local/glassfish3
   
   fi
 
