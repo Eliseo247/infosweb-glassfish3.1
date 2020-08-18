@@ -43,7 +43,7 @@ WORKDIR /usr/local/glassfish3
 USER 1001
 
 ---------------------------------------------------------------------------------
-CMD ["/bin/bash","/binarios/docker-entrypoint.sh"]
+CMD ["/bin/sh","/binarios/docker-entrypoint.sh"]
 # Set labels usados en OpenShift para describir el build de la imagen
 LABEL io.k8s.description="moodle" \
       io.k8s.display-name="moodle apache redhat " \
