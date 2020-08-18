@@ -38,7 +38,7 @@ RUN chmod 777  /binarios
 
 VOLUME  ["/usr/local/glassfish3"]
 VOLUME ["/home/digitalizados"]
-WORKDIR /usr/local/glassfish3
+#WORKDIR /usr/local/glassfish3
 
 USER 1001
 
