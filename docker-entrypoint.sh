@@ -4,7 +4,7 @@ if [ ! -f /usr/local/glassfish3/bin/asadmin ]; then
   cp -f /binarios/glassfish3 /usr/local/glassfish3
   
   fi
-
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 if ! whoami &> /dev/null; then
 cd /usr/local/glassfish3
@@ -12,9 +12,9 @@ cd /usr/local/glassfish3
     echo "${USER_NAME:-default}:x:$(id -u):0:${USER_NAME:-default} user:${HOME}:/sbin/nologin" >> /etc/passwd
   fi
 fi
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-if [ "$1" = 'asadmin' ]; then
-    if [ "$AS_ADMIN_PASSWORD" ]; then
+
         echo "AS_ADMIN_PASSWORD=" > /tmp/glassfishpwd
         echo "AS_ADMIN_NEWPASSWORD=${AS_ADMIN_PASSWORD}" >> /tmp/glassfishpwd
 
@@ -38,8 +38,7 @@ su - exemple
         chmod 600 /root/.asadminpass && id
 su - exemple
 
-        if [ "$AS_ADMIN_ENABLE_SECURE" ]; then
-        
+       
             echo "AS_ADMIN_PASSWORD=${AS_ADMIN_PASSWORD}" > /tmp/glassfishpwd
             asadmin start-domain            
             
@@ -50,14 +49,14 @@ su - exemple
             # self-signed certificate for the admin API.
             # asadmin --interactive=false version
 
-            asadmin stop-domain
-        fi
+           # asadmin stop-domain
+       # fi
 
-        rm /tmp/glassfishpwd
-    fi
+      #  rm /tmp/glassfishpwd
+   # fi
 
-    exec "$@"
-fi
+  #  exec "$@"
+#fi
 
-exec "$@"
+#exec "$@"
 exec "asadmin", "start-domain", "--verbose"
