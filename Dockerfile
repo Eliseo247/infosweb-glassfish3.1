@@ -1,6 +1,5 @@
 FROM openjdk:7u151-jdk-alpine
 
-# Set environment variables
 ENV GLASSFISH_PKG=/tmp/glassfish-3.1.2.2.zip \
     GLASSFISH_URL=http://download.oracle.com/glassfish/3.1.2.2/release/glassfish-3.1.2.2.zip \
     GLASSFISH_HOME=/usr/local/glassfish3 \
@@ -38,7 +37,7 @@ RUN chmod 777  /binarios
 
 VOLUME  ["/usr/local/glassfish3"]
 VOLUME ["/home/digitalizados"]
-#WORKDIR /usr/local/glassfish3
+WORKDIR /usr/local/glassfish3
 
 USER 1001
 
